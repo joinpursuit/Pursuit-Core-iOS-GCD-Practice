@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Comic View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ComicViewController" customModule="GrandCentralDispatchPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acf-6I-I3M">
+                                <rect key="frame" x="190" y="44" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="twe-8R-BP2">
+                                <rect key="frame" x="50" y="155.5" width="314" height="529.5"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCo-nv-rcl">
+                                <rect key="frame" x="136" y="735" width="142" height="30"/>
+                                <state key="normal" title="Load Random Comic"/>
+                                <connections>
+                                    <action selector="loadRandomComic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="unL-YP-JzN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="alt text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9j-LU-HaG">
+                                <rect key="frame" x="181" y="85" width="52.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="twe-8R-BP2" secondAttribute="trailing" constant="50" id="1Wl-Xm-wg1"/>
+                            <constraint firstItem="zCo-nv-rcl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="A4W-zY-tXI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Q9j-LU-HaG" secondAttribute="trailing" id="Lkd-vK-WyL"/>
+                            <constraint firstItem="twe-8R-BP2" firstAttribute="top" secondItem="Q9j-LU-HaG" secondAttribute="bottom" constant="50" id="eV1-Q1-3zm"/>
+                            <constraint firstItem="Q9j-LU-HaG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ec1-fl-oIH"/>
+                            <constraint firstItem="Q9j-LU-HaG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ekW-Hd-rIc"/>
+                            <constraint firstItem="twe-8R-BP2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="fNJ-OK-JKn"/>
+                            <constraint firstItem="Acf-6I-I3M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fZ9-xn-Uoj"/>
+                            <constraint firstItem="Q9j-LU-HaG" firstAttribute="top" secondItem="Acf-6I-I3M" secondAttribute="bottom" constant="20" id="gj2-Bn-YhM"/>
+                            <constraint firstItem="Acf-6I-I3M" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rbE-ct-v8d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zCo-nv-rcl" secondAttribute="bottom" constant="97" id="v9B-Kz-KfV"/>
+                            <constraint firstItem="zCo-nv-rcl" firstAttribute="top" secondItem="twe-8R-BP2" secondAttribute="bottom" constant="50" id="z0q-TE-JAc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="altTextLabel" destination="Q9j-LU-HaG" id="R1I-6U-dld"/>
+                        <outlet property="comicImageView" destination="twe-8R-BP2" id="32z-Ob-bZL"/>
+                        <outlet property="loadRandomComicButton" destination="zCo-nv-rcl" id="7gk-yH-fus"/>
+                        <outlet property="titleLabel" destination="Acf-6I-I3M" id="jKu-SQ-s3g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="139"/>
+        </scene>
+    </scenes>
+</document>
